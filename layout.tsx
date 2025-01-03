@@ -1,11 +1,5 @@
-import { ThemeProvider } from "@/components/theme-provider";
-import { Montserrat } from "next/font/google";
-import "./globals.css";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+import { ThemeProvider } from "@/components/theme-provider"
+import "./app/globals.css"
 
 export default function RootLayout({
   children,
@@ -14,7 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={montserrat.className}>
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
