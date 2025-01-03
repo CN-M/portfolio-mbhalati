@@ -5,12 +5,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Twitter } from "lucide-react";
 import { useState } from "react";
 
 interface ContactInfo {
   email: string;
-  phone: string;
+  // phone: string;
   location: string;
   socials: {
     github: string;
@@ -21,7 +21,7 @@ interface ContactInfo {
 
 const contactInfo: ContactInfo = {
   email: "cn.mbhalati@gmail.com",
-  phone: "(+27) 61 4255 746",
+  // phone: "(+27) 61 4255 746",
   location: "Tzaneen, Limpopo, South Africa",
   socials: {
     github: "https://github.com/cn-m",
@@ -185,7 +185,7 @@ export function ContactSection() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-4">
+                    {/* <div className="flex items-center gap-4">
                       <div className="flex size-10 items-center justify-center rounded-full bg-primary/10">
                         <Phone className="size-5 text-primary" />
                       </div>
@@ -198,7 +198,7 @@ export function ContactSection() {
                           {contactInfo.phone}
                         </a>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="flex items-center gap-4">
                       <div className="flex size-10 items-center justify-center rounded-full bg-primary/10">

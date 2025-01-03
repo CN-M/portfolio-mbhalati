@@ -164,7 +164,7 @@ export default function Page() {
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link
-                    href="/Ntsako_Mbhalati_-_Software_Engineer_CV.pdf"
+                    href="/Ntsako_Mbhalati_-_Software_Engineer_CV_V2.pdf"
                     download
                     target="_blank"
                   >
