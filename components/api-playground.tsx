@@ -113,15 +113,17 @@ export function APIPlayground() {
 
   return (
     <Card className="w-full">
-      <CardContent className="p-6">
+      <CardContent className="p-4 sm:p-6">
         <Tabs defaultValue="playground" className="space-y-4">
-          <TabsList>
-            <TabsTrigger value="playground">Playground</TabsTrigger>
-            <TabsTrigger value="code">Code</TabsTrigger>
-          </TabsList>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <TabsList className="w-full sm:w-auto grid grid-cols-2 gap-2">
+              <TabsTrigger value="playground">Playground</TabsTrigger>
+              <TabsTrigger value="code">Code</TabsTrigger>
+            </TabsList>
+          </div>
 
           <TabsContent value="playground" className="space-y-4">
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
               {endpoints.map((endpoint) => (
                 <Button
                   key={endpoint.name}
@@ -133,6 +135,7 @@ export function APIPlayground() {
                     setParameters({});
                     setResponse("");
                   }}
+                  className="w-full text-sm"
                 >
                   {endpoint.name}
                 </Button>
@@ -140,31 +143,33 @@ export function APIPlayground() {
             </div>
 
             <div className="rounded-md bg-muted p-4">
-              <div className="flex items-center gap-2 font-mono text-sm">
-                <span className="font-semibold text-primary">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+                <span className="font-semibold text-primary text-sm">
                   {selectedEndpoint.method}
                 </span>
-                <span>{selectedEndpoint.path}</span>
+                <span className="font-mono text-sm break-all">
+                  {selectedEndpoint.path}
+                </span>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
                 {selectedEndpoint.description}
               </p>
             </div>
 
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-4">
               {selectedEndpoint.parameters.map((param) => (
                 <div
                   key={param.name}
-                  className="flex flex-col items-center sm:flex-row gap-2 sm:gap-4"
+                  className="flex flex-col sm:flex-row items-start gap-2"
                 >
-                  <label className="text-sm font-medium">
+                  <label className="min-w-[100px] text-sm font-medium">
                     {param.name}
                     {param.required && (
                       <span className="text-destructive">*</span>
                     )}
                   </label>
                   <Input
-                    className="mt-1.5 w-full sm:w-auto"
+                    className="w-full sm:w-[300px]"
                     placeholder={`Enter ${param.name}`}
                     value={parameters[param.name] || ""}
                     onChange={(e) =>
@@ -177,8 +182,9 @@ export function APIPlayground() {
                 </div>
               ))}
             </div>
+
             <Button
-              className="w-full"
+              className="w-full sm:w-auto"
               onClick={handleSubmit}
               disabled={loading}
             >
@@ -187,14 +193,14 @@ export function APIPlayground() {
             </Button>
 
             {response && (
-              <pre className="mt-4 overflow-auto rounded-lg bg-muted p-4 font-mono text-sm">
+              <pre className="mt-4 overflow-x-auto rounded-lg bg-muted p-4 font-mono text-sm">
                 {response}
               </pre>
             )}
           </TabsContent>
 
           <TabsContent value="code">
-            <pre className="overflow-auto rounded-lg bg-muted p-4 font-mono text-sm">
+            <pre className="overflow-x-auto rounded-lg bg-muted p-4 font-mono text-xs sm:text-sm">
               {selectedEndpoint.backendCode}
             </pre>
           </TabsContent>

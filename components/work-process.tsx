@@ -1,8 +1,17 @@
-"use client"
+"use client";
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Braces, GitBranch, Laptop, LayoutDashboard, MessagesSquare, Rocket, Search, Settings } from 'lucide-react'
-import { useState } from "react"
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Braces,
+  GitBranch,
+  Laptop,
+  LayoutDashboard,
+  MessagesSquare,
+  Rocket,
+  Search,
+  Settings,
+} from "lucide-react";
+import { useState } from "react";
 
 const processes = [
   {
@@ -53,13 +62,13 @@ const processes = [
     description:
       "Regular feedback loops with stakeholders and iterative improvements.",
   },
-]
+];
 
 export function WorkProcess() {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 mx-4">
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {processes.map((process, index) => (
           <Card
@@ -84,6 +93,5 @@ export function WorkProcess() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
-

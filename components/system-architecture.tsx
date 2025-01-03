@@ -74,19 +74,22 @@ export function SystemArchitecture() {
 
   return (
     <Card>
-      <CardContent className="p-6">
-        <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-lg font-semibold"></h3>
+      <CardContent className="p-4 sm:p-6">
+        <div className="mb-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <h3 className="text-lg font-semibold text-center sm:text-left">
+            System Architecture
+          </h3>
           <Button
             variant="outline"
             onClick={startAnimation}
             disabled={isAnimating}
+            className="w-full sm:w-auto"
           >
             Simulate Request Flow
           </Button>
         </div>
 
-        <div className="relative aspect-square sm:aspect-video w-full">
+        <div className="relative aspect-square sm:aspect-[4/3] md:aspect-[16/9] w-full">
           <svg
             ref={svgRef}
             className="h-full w-full"
@@ -116,7 +119,7 @@ export function SystemArchitecture() {
                     x={`${(from.x + to.x) / 2}%`}
                     y={`${(from.y + to.y) / 2 - 1}%`}
                     textAnchor="middle"
-                    className="fill-current text-[1.5px]"
+                    className="fill-current text-[1.5px] sm:text-[2px] md:text-[2.5px]"
                   >
                     {conn.label}
                   </text>
@@ -156,7 +159,7 @@ export function SystemArchitecture() {
                   <text
                     y="5"
                     textAnchor="middle"
-                    className="fill-current text-[2px] font-medium"
+                    className="fill-current text-[1.5px] sm:text-[2px] md:text-[2.5px] font-medium"
                   >
                     {node.label}
                   </text>
@@ -166,14 +169,14 @@ export function SystemArchitecture() {
           </svg>
         </div>
 
-        <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
+        <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-xs sm:text-sm">
           {Object.entries(nodeColors).map(([type, color]) => (
             <div key={type} className="flex items-center gap-2">
               <div
                 className="h-3 w-3 rounded-full"
                 style={{ backgroundColor: color }}
               />
-              <span className="text-sm capitalize">{type}</span>
+              <span className="capitalize">{type}</span>
             </div>
           ))}
         </div>

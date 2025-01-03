@@ -5,6 +5,7 @@ import { APIPlayground } from "@/components/api-playground";
 import { AvailabilityBadge } from "@/components/availability-badge";
 import { CodeExamples } from "@/components/code-examples";
 import { CodePlayground } from "@/components/code-playground";
+import { ContactSection } from "@/components/contact-section";
 import { InteractiveTerminal } from "@/components/interactive-terminal";
 import { MobileNav } from "@/components/mobile-nav";
 // import { NewsletterForm } from "@/components/newsletter-form"
@@ -38,9 +39,59 @@ import { ProjectCard } from "@/components/project-card";
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 
+const projects = [
+  {
+    title: "Bird App",
+    description:
+      "A full-stack social media platform enabling users to post, comment, like, and manage dynamic feeds.",
+    image: "/bird-app.bmp",
+    tags: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Prisma",
+      "Redis",
+      "PostgreSQL",
+    ],
+    link: "https://bird-app.up.railway.app/",
+  },
+  {
+    title: "CRC Polokwane Website",
+    description:
+      "The official website for CRC Polokwane, featuring responsive design, payment integration, and user authentication.",
+    image: "/crc.bmp",
+    tags: ["Next.js", "TypeScript", "React", "TailwindCSS", "Yoco"],
+    link: "https://crcplk.co.za/",
+  },
+  // {
+  //   title: "Student Management Dashboard",
+  //   description:
+  //     "A dashboard for managing international student university applications, with dynamic user management.",
+  //   image: "/placeholder.svg",
+  //   tags: [
+  //     "Next.js",
+  //     "TypeScript",
+  //     "PostgreSQL",
+  //     "Prisma",
+  //     "ShadCN UI",
+  //     "Tanstack React Table",
+  //   ],
+  //   link: "#",
+  // },
+  {
+    title: "Personal Website",
+    description:
+      "A personal portfolio and blog with Spotify API integration, secure login, and a markdown-based blog system.",
+    image: "/cnm.bmp",
+    tags: ["Next.js", "TypeScript", "React", "PostgreSQL", "Prisma", "MDX"],
+    link: "https://cn.mbhalati.com/",
+  },
+];
+
 export default function Page() {
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center">
+    <div className="min-h-screen bg-background flex flex-col items-center justify-center">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center justify-between px-4 sm:px-6">
@@ -80,13 +131,13 @@ export default function Page() {
         </div>
       </header>
 
-      <main className="container px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <main className="flex-1 w-full flex flex-col items-center justify-center">
         {/* Hero Section */}
-        <section className="px-24 py-12 sm:py-16 md:py-24 lg:py-32">
-          {/* <div className="grid gap-8 lg:grid-cols-2 items-center"> */}
-          <div className="flex gap-16 items-center">
+        <section className="flex w-full justify-center px-6 sm:px-12 lg:px-24 py-12 sm:py-16 md:py-24 lg:py-32">
+          {/* <div className="grid gap-8 md:gap-16 md:grid-cols-2 items-center"> */}
+          <div className="md:w-[75%] flex flex-col md:flex-row gap-4 justify-center items-center">
             {/* Left Column - Content */}
-            <div className="flex flex-col space-y-6 w-[55%]">
+            <div className="flex flex-col space-y-6 w-full">
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="size-3 rounded-full bg-primary" />
                 Software Engineer & UI/UX Designer
@@ -94,13 +145,13 @@ export default function Page() {
 
               <div className="space-y-4">
                 <h1 className="text-3xl font-light tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                  Building Digital Experiences That Matter
+                  Solving Problems Through Thoughtful Design and Code
                 </h1>
                 <p className="text-base text-muted-foreground sm:text-lg md:text-xl max-w-[600px]">
-                  I craft beautiful, user-friendly web experiences using modern
-                  technologies. With 5+ years of experience in full-stack
-                  development, I specialize in building scalable applications
-                  that solve real-world problems.
+                  I design and develop user-focused web applications using
+                  modern tech. With a strong foundation in mathematics and
+                  statistics, I specialize in crafting efficient, data-driven
+                  solutions that address complex challenges.
                 </p>
               </div>
 
@@ -112,7 +163,11 @@ export default function Page() {
                   <Link href="#projects">View Projects</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="/resume.pdf" download>
+                  <Link
+                    href="/Ntsako_Mbhalati_-_Software_Engineer_CV.pdf"
+                    download
+                    target="_blank"
+                  >
                     <Download className="mr-2 size-4" />
                     Download CV
                   </Link>
@@ -121,7 +176,7 @@ export default function Page() {
             </div>
 
             {/* Right Column - Profile */}
-            <div className="w-[40%] flex flex-col items-center space-y-4 lg:justify-self-end">
+            <div className="flex flex-col items-center space-y-4 md:w-1/2 md:items-start lg:items-center">
               <AvailabilityBadge />
               <div className="relative size-40 overflow-hidden rounded-full ring-2 ring-border">
                 <Image
@@ -134,28 +189,28 @@ export default function Page() {
                 />
               </div>
 
-              <div className="text-center space-y-1">
+              <div className="text-center md:text-left lg:text-center space-y-1">
                 <h2 className="text-2xl font-bold">C.N. Mbhalati</h2>
                 <p className="text-muted-foreground">Software Engineer</p>
               </div>
 
               <div className="flex gap-4">
                 <Link
-                  href="#"
+                  href="https://github.com/cn-m"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Github className="size-5" />
                   <span className="sr-only">GitHub</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/c-n-mbhalati-a6526716a/"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Linkedin className="size-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://twitter.com/cn_mbhalati"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Twitter className="size-5" />
@@ -170,7 +225,7 @@ export default function Page() {
         <AboutSection />
 
         {/* Skills Section */}
-        <section className="space-y-12 py-16">
+        <section className="flex flex-col items-center justify-center space-y-12 py-16">
           <h2 className="text-center text-3xl font-bold">
             Technical Expertise
           </h2>
@@ -178,7 +233,7 @@ export default function Page() {
           <div className="grid gap-8">
             <TechStack3D />
 
-            <div className="grid gap-4">
+            <div className="grid gap-4 mx-4">
               <h3 className="text-xl font-semibold">Areas of Expertise</h3>
               <div className="grid gap-4 sm:grid-cols-2">
                 <SkillCard
@@ -244,54 +299,58 @@ export default function Page() {
           </section> */}
 
         {/* Technical Demonstrations Section */}
-        <section className="space-y-12 py-16">
+        <section className="container flex flex-col items-center justify-center space-y-12 py-16 px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-3xl font-bold">
             Technical Demonstrations
           </h2>
 
           <div className="grid gap-8">
-            <div className="w-full h-full">
+            {/* Algorithm Visualizer */}
+            <div className="w-full">
               <h3 className="mb-4 text-xl font-semibold">
                 Algorithm Visualization
               </h3>
               <AlgorithmVisualizer />
             </div>
 
-            <div className="w-full h-full">
+            {/* System Architecture */}
+            <div className="w-full">
               <h3 className="mb-4 text-xl font-semibold">
                 System Architecture
               </h3>
               <SystemArchitecture />
             </div>
-            <div className="w-full h-full">
+
+            {/* Real-time Collaboration */}
+            <div className="w-full">
               <h3 className="mb-4 text-xl font-semibold">
                 Real-time Collaboration
               </h3>
               <RealtimeCollab />
             </div>
-            <div className="flex flex-col justify-center items-center w-full gap-2">
-              <div className="w-full grid grid-cols-2 gap-4">
-                <div className="w-full h-full">
-                  <h3 className="mb-4 text-xl font-semibold">API Playground</h3>
-                  <APIPlayground />
-                </div>
-                <div className="w-full h-full">
-                  <h3 className="mb-4 text-xl font-semibold">
-                    Code Playground
-                  </h3>
-                  <CodePlayground />
-                </div>
+
+            {/* API & Code Playgrounds */}
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="w-full">
+                <h3 className="mb-4 text-xl font-semibold">API Playground</h3>
+                <APIPlayground />
               </div>
-              <div className="w-1/2 h-full">
-                <h3 className="mb-4 text-xl font-semibold">Unix Terminal</h3>
-                <InteractiveTerminal />
+              <div className="w-full">
+                <h3 className="mb-4 text-xl font-semibold">Code Playground</h3>
+                <CodePlayground />
               </div>
             </div>
-            <div className="flex justify-center w-full">
-              <div className="w-[75%] h-full">
-                <h3 className="mb-4 text-xl font-semibold">Code Examples</h3>
-                <CodeExamples />
-              </div>
+
+            {/* Interactive Terminal */}
+            <div className="w-full max-w-2xl mx-auto">
+              <h3 className="mb-4 text-xl font-semibold">Unix Terminal</h3>
+              <InteractiveTerminal />
+            </div>
+
+            {/* Code Examples */}
+            <div className="hidden sm:block w-full max-w-4xl mx-auto">
+              <h3 className="mb-4 text-xl font-semibold">Code Examples</h3>
+              <CodeExamples />
             </div>
           </div>
         </section>
@@ -335,27 +394,16 @@ export default function Page() {
               </p>
             </div>
             <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-8 sm:mt-12">
-              <ProjectCard
-                title="E-commerce Platform"
-                description="A full-featured e-commerce platform built with Next.js and Stripe"
-                image="/placeholder.svg"
-                tags={["Next.js", "TypeScript", "Stripe"]}
-                link="#"
-              />
-              <ProjectCard
-                title="Task Management App"
-                description="A real-time task management application with team collaboration features"
-                image="/placeholder.svg"
-                tags={["React", "Node.js", "Socket.io"]}
-                link="#"
-              />
-              <ProjectCard
-                title="AI Chat Interface"
-                description="A modern chat interface for AI interactions with streaming responses"
-                image="/placeholder.svg"
-                tags={["React", "OpenAI", "TailwindCSS"]}
-                link="#"
-              />
+              {projects.map((project) => (
+                <ProjectCard
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                  tags={project.tags}
+                  link={project.link}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -373,7 +421,7 @@ export default function Page() {
         {/* Testimonials Section */}
         <section
           id="testimonials"
-          className="space-y-8 py-12 sm:py-16 md:py-24 lg:py-32 bg-muted"
+          className="w-full flex justify-center space-y-8 py-12 sm:py-16 md:py-24 lg:py-32 bg-muted"
           aria-label="Testimonials"
         >
           <div className="container px-4 sm:px-6">
@@ -392,14 +440,17 @@ export default function Page() {
                   <Quote className="size-8 text-muted-foreground mb-4" />
                   <blockquote className="space-y-2">
                     <p className="text-lg">
-                      "John's technical expertise and leadership skills were
-                      instrumental in the success of our project. His ability to
-                      mentor junior developers while maintaining high code
-                      quality is remarkable."
+                      "Ntsako has been a fantastic addition to our team. He took
+                      the lead on creating a dashboard that has made managing
+                      our student applications so much easier. His ability to
+                      understand our needs and translate them into a practical,
+                      user-friendly system has been invaluable. He's reliable,
+                      detail-oriented, and a great communicator. I couldn't
+                      recommend him more."
                     </p>
                     <footer className="text-sm text-muted-foreground">
                       <cite className="font-medium">
-                        — Sarah Johnson, CTO at Tech Corp
+                        — Ike Mafa, CTO at College Connect UK
                       </cite>
                     </footer>
                   </blockquote>
@@ -410,13 +461,17 @@ export default function Page() {
                   <Quote className="size-8 text-muted-foreground mb-4" />
                   <blockquote className="space-y-2">
                     <p className="text-lg">
-                      "Working with John was a game-changer for our startup. His
-                      full-stack expertise and attention to detail helped us
-                      launch our MVP ahead of schedule."
+                      "Ntsako did an amazing job with our church's website. He
+                      brought our vision to life and made it so easy for our
+                      members to use. Beyond his technical skills, he was great
+                      at listening to feedback and ensuring everything was
+                      exactly how we wanted it. It's clear he cares deeply about
+                      the work he does and the people he works with."
                     </p>
                     <footer className="text-sm text-muted-foreground">
                       <cite className="font-medium">
-                        — Michael Chen, Founder at StartUp Inc
+                        — Mpho Lemekoana, Head of Media and Communications at
+                        CRC Polokwane
                       </cite>
                     </footer>
                   </blockquote>
@@ -439,10 +494,11 @@ export default function Page() {
             <NewsletterForm />
           </div>
         </section> */}
+        <ContactSection />
       </main>
 
       {/* Footer */}
-      <footer className="border-t py-8">
+      <footer className="w-full border-t py-8">
         <div className="container px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
           <div className="flex items-center gap-2">
             {/* <AnimatedLogo /> */}
@@ -456,19 +512,19 @@ export default function Page() {
 
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://github.com/cn-m"
               className="text-sm text-muted-foreground hover:text-foreground"
             >
               GitHub
             </a>
             <a
-              href="#"
+              href="https://twitter.com/cn_mbhalati"
               className="text-sm text-muted-foreground hover:text-foreground"
             >
               Twitter
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/c-n-mbhalati-a6526716a/"
               className="text-sm text-muted-foreground hover:text-foreground"
             >
               LinkedIn

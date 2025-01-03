@@ -77,24 +77,24 @@ export function InteractiveTerminal() {
   return (
     <Card
       ref={containerRef}
-      className="bg-zinc-950 p-4 font-mono text-sm text-white"
+      className="bg-zinc-950 p-4 font-mono text-sm text-white w-full max-w-full overflow-hidden"
     >
       <div className="flex space-x-2 mb-4">
         <div className="size-3 rounded-full bg-red-500" />
         <div className="size-3 rounded-full bg-yellow-500" />
         <div className="size-3 rounded-full bg-green-500" />
       </div>
-      <div className="space-y-2">
+      <div className="space-y-2 overflow-x-auto">
         {commands.slice(0, currentLine).map((command, i) => (
-          <div key={i} className="flex">
-            <span className="text-green-400 mr-2">$</span>
-            <span>{command.text}</span>
+          <div key={i} className="flex min-w-0">
+            <span className="text-green-400 mr-2 flex-shrink-0">$</span>
+            <span className="break-all">{command.text}</span>
           </div>
         ))}
         {currentLine < commands.length && (
-          <div className="flex">
-            <span className="text-green-400 mr-2">$</span>
-            <span>{text}</span>
+          <div className="flex min-w-0">
+            <span className="text-green-400 mr-2 flex-shrink-0">$</span>
+            <span className="break-all">{text}</span>
             {showCursor && <span className="ml-1 animate-pulse">▋</span>}
           </div>
         )}

@@ -1,45 +1,45 @@
-import { AboutSection } from "@/components/about-section"
-import { AchievementsTimeline } from "@/components/achievements-timeline"
-import { AlgorithmVisualizer } from "@/components/algorithm-visualizer"
-import { AnimatedLogo } from "@/components/animated-logo"
-import { APIPlayground } from "@/components/api-playground"
-import { AvailabilityBadge } from "@/components/availability-badge"
-import { CodeExamples } from "@/components/code-examples"
-import { CodePlayground } from "@/components/code-playground"
-import { ContributionGraph } from "@/components/contribution-graph"
-import { Counter } from "@/components/counter"
-import { InteractiveTerminal } from "@/components/interactive-terminal"
-import { NewsletterForm } from "@/components/newsletter-form"
-import { OpenSource } from "@/components/open-source"
-import { PerformanceDashboard } from "@/components/performance-dashboard"
-import { ProjectMetrics } from "@/components/project-metrics"
-import { ProjectShowcase } from "@/components/project-showcase"
-import { Publications } from "@/components/publications"
-import { RealtimeCollab } from "@/components/realtime-collab"
-import { SkillCard } from "@/components/skill-card"
-import { SkillProgress } from "@/components/skill-progress"
-import { SkillsGlobe } from "@/components/skills-globe"
-import { SpeakingEngagements } from "@/components/speaking-engagements"
-import { SystemArchitecture } from "@/components/system-architecture"
-import { TechRadar } from "@/components/tech-radar"
-import { TechStack3D } from "@/components/tech-stack-3d"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Timeline } from "@/components/timeline"
-import { MobileNav } from "./components/mobile-nav"
-import { WorkProcess } from "@/components/work-process"
-import { Code2, Cpu, Layout, LineChart, Rocket, Terminal } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Download, Github, Linkedin, Mail, Twitter, Quote } from 'lucide-react'
-import Image from "next/image"
-import Link from "next/link"
+import { AboutSection } from "@/components/about-section";
+import { AchievementsTimeline } from "@/components/achievements-timeline";
+import { AlgorithmVisualizer } from "@/components/algorithm-visualizer";
+import { AnimatedLogo } from "@/components/animated-logo";
+import { APIPlayground } from "@/components/api-playground";
+import { AvailabilityBadge } from "@/components/availability-badge";
+import { CodeExamples } from "@/components/code-examples";
+import { ContributionGraph } from "@/components/contribution-graph";
+import { NewsletterForm } from "@/components/newsletter-form";
+import { OpenSource } from "@/components/open-source";
+import { ProjectMetrics } from "@/components/project-metrics";
+import { ProjectShowcase } from "@/components/project-showcase";
+import { Publications } from "@/components/publications";
+import { RealtimeCollab } from "@/components/realtime-collab";
+import { SkillCard } from "@/components/skill-card";
+import { SkillProgress } from "@/components/skill-progress";
+import { SpeakingEngagements } from "@/components/speaking-engagements";
+import { SystemArchitecture } from "@/components/system-architecture";
+import { TechStack3D } from "@/components/tech-stack-3d";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Timeline } from "@/components/timeline";
+import { Button } from "@/components/ui/button";
+import { WorkProcess } from "@/components/work-process";
+import {
+  Code2,
+  Cpu,
+  Download,
+  Github,
+  Layout,
+  Linkedin,
+  Terminal,
+  Twitter,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { MobileNav } from "./components/mobile-nav";
 
 export default function Page() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center justify-between px-4 sm:px-6">
           <Link href="/" className="font-bold">
             Portfolio
@@ -78,9 +78,9 @@ export default function Page() {
       </header>
 
       <main className="container px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-       {/* Hero Section */}
+        {/* Hero Section */}
         <section className="container py-12 sm:py-16 md:py-24 lg:py-32">
-          <div className="grid gap-8 lg:grid-cols-2 items-center">
+          <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 items-center">
             {/* Left Column - Content */}
             <div className="flex flex-col space-y-6">
               <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
@@ -93,9 +93,10 @@ export default function Page() {
                   Building Digital Experiences That Matter
                 </h1>
                 <p className="text-base text-muted-foreground sm:text-lg md:text-xl max-w-[600px]">
-                  I craft beautiful, user-friendly web experiences using modern technologies.
-                  With 5+ years of experience in full-stack development, I specialize in
-                  building scalable applications that solve real-world problems.
+                  I craft beautiful, user-friendly web experiences using modern
+                  technologies. With 5+ years of experience in full-stack
+                  development, I specialize in building scalable applications
+                  that solve real-world problems.
                 </p>
               </div>
 
@@ -132,26 +133,28 @@ export default function Page() {
 
               <div className="text-center space-y-2">
                 <h2 className="text-2xl font-bold">John Doe</h2>
-                <p className="text-muted-foreground">Senior Full Stack Developer</p>
+                <p className="text-muted-foreground">
+                  Senior Full Stack Developer
+                </p>
               </div>
 
               <div className="flex gap-4">
                 <Link
-                  href="#"
+                  href="https://github.com/CN-M"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Github className="size-5" />
                   <span className="sr-only">GitHub</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/c-n-mbhalati-a6526716a/"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Linkedin className="size-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://twitter.com/cn_mbhalati"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Twitter className="size-5" />
@@ -167,11 +170,13 @@ export default function Page() {
 
         {/* Skills Section */}
         <section className="space-y-12 py-16">
-          <h2 className="text-center text-3xl font-bold">Technical Expertise</h2>
-          
+          <h2 className="text-center text-3xl font-bold">
+            Technical Expertise
+          </h2>
+
           <div className="grid gap-8">
             <TechStack3D />
-            
+
             <div className="grid gap-8 md:grid-cols-2">
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">Core Technologies</h3>
@@ -182,7 +187,7 @@ export default function Page() {
                   <SkillProgress name="AWS" level={80} />
                 </div>
               </div>
-              
+
               <div className="grid gap-4">
                 <h3 className="text-xl font-semibold">Areas of Expertise</h3>
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -215,7 +220,7 @@ export default function Page() {
         {/* Work & Projects Section */}
         <section className="space-y-12 py-16">
           <h2 className="text-center text-3xl font-bold">Work & Projects</h2>
-          
+
           <div className="grid gap-8">
             <ProjectShowcase
               title="E-commerce Platform"
@@ -230,35 +235,43 @@ export default function Page() {
                 contributors: 8,
               }}
             />
-            
+
             <div className="grid gap-8 md:grid-cols-2">
               <ProjectMetrics />
               <ContributionGraph />
             </div>
-            
+
             <WorkProcess />
           </div>
         </section>
 
         {/* Technical Demonstrations Section */}
         <section className="space-y-12 py-16">
-          <h2 className="text-center text-3xl font-bold">Technical Demonstrations</h2>
-          
+          <h2 className="text-center text-3xl font-bold">
+            Technical Demonstrations
+          </h2>
+
           <div className="grid gap-8">
             <div className="grid gap-8 md:grid-cols-2">
               <div>
-                <h3 className="mb-4 text-xl font-semibold">Algorithm Visualization</h3>
+                <h3 className="mb-4 text-xl font-semibold">
+                  Algorithm Visualization
+                </h3>
                 <AlgorithmVisualizer />
               </div>
               <div>
-                <h3 className="mb-4 text-xl font-semibold">System Architecture</h3>
+                <h3 className="mb-4 text-xl font-semibold">
+                  System Architecture
+                </h3>
                 <SystemArchitecture />
               </div>
             </div>
-            
+
             <div className="grid gap-8 md:grid-cols-2">
               <div>
-                <h3 className="mb-4 text-xl font-semibold">Real-time Collaboration</h3>
+                <h3 className="mb-4 text-xl font-semibold">
+                  Real-time Collaboration
+                </h3>
                 <RealtimeCollab />
               </div>
               <div>
@@ -266,7 +279,7 @@ export default function Page() {
                 <APIPlayground />
               </div>
             </div>
-            
+
             <div>
               <h3 className="mb-4 text-xl font-semibold">Code Examples</h3>
               <CodeExamples />
@@ -276,8 +289,10 @@ export default function Page() {
 
         {/* Experience & Achievements Section */}
         <section className="space-y-12 py-16">
-          <h2 className="text-center text-3xl font-bold">Experience & Achievements</h2>
-          
+          <h2 className="text-center text-3xl font-bold">
+            Experience & Achievements
+          </h2>
+
           <div className="grid gap-8">
             <Timeline />
             <AchievementsTimeline />
@@ -286,8 +301,10 @@ export default function Page() {
 
         {/* Open Source & Publications */}
         <section className="space-y-12 py-16">
-          <h2 className="text-center text-3xl font-bold">Open Source & Publications</h2>
-          
+          <h2 className="text-center text-3xl font-bold">
+            Open Source & Publications
+          </h2>
+
           <div className="grid gap-8">
             <OpenSource />
             <Publications />
@@ -304,10 +321,11 @@ export default function Page() {
           <div className="text-center">
             <h2 className="mb-4 text-3xl font-bold">Stay Updated</h2>
             <p className="text-muted-foreground">
-              Subscribe to my newsletter for the latest updates on projects and articles
+              Subscribe to my newsletter for the latest updates on projects and
+              articles
             </p>
           </div>
-          
+
           <div className="mx-auto max-w-md">
             <NewsletterForm />
           </div>
@@ -323,21 +341,29 @@ export default function Page() {
               © 2024 All rights reserved
             </span>
           </div>
-          
+
           <div className="flex gap-4">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
+            <a
+              href="https://github.com/cn-m"
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
               GitHub
             </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
+            <a
+              href="https://twitter.com/cn_mbhalati"
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
               Twitter
             </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
+            <a
+              href="https://www.linkedin.com/in/c-n-mbhalati-a6526716a/"
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
               LinkedIn
             </a>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-

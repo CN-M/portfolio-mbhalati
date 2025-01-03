@@ -9,36 +9,36 @@ const achievements = [
     icon: Trophy,
     title: "Technical Excellence",
     items: [
-      "Reduced application load time by 60%",
-      "Implemented CI/CD pipelines saving 20+ hours/week",
-      "Led migration of legacy systems to modern stack",
+      "Designed and implemented a Student Management Dashboard for College Connect UK",
+      "Built and delivered CRC Polokwane's official website with intuitive UI/UX and payment integration",
+      "Developed a full-stack social media platform with dynamic user interactions and caching",
     ],
   },
   {
     icon: Users,
-    title: "Leadership & Mentorship",
+    title: "Leadership & Collaboration",
     items: [
-      "Mentored 10+ junior developers",
-      "Led team of 6 developers across 3 time zones",
-      "Conducted 20+ technical workshops",
+      "Collaborated with stakeholders to align digital solutions with organizational goals",
+      "Worked across remote teams to deliver complex projects with tight deadlines",
+      "Contributed to enhancing technical strategies for scalable architectures",
     ],
   },
   {
     icon: Code2,
     title: "Innovation",
     items: [
-      "Filed 2 technical patents",
-      "Created open-source libraries with 1000+ stars",
-      "Pioneered microservices architecture adoption",
+      "Developed scalable hosting solutions during AWS virtual experience programs",
+      "Designed responsive websites integrating APIs for dynamic content updates",
+      "Delivered markdown-based blogs with secure login and guest interaction features",
     ],
   },
   {
     icon: BookOpen,
-    title: "Knowledge Sharing",
+    title: "Continuous Learning",
     items: [
-      "Published 15+ technical articles",
-      "Regular conference speaker",
-      "Active open source contributor",
+      "Pursued advanced courses in real analysis, time series, and regression analysis",
+      "Actively contribute to open-source projects and personal development blogs",
+      "Engaged in mentorship and knowledge-sharing initiatives within my community",
     ],
   },
 ];
@@ -47,7 +47,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="space-y-16 py-16 sm:py-20 md:py-28 lg:py-32"
+      className="flex flex-col items-center justify-center space-y-16 py-16 sm:py-20 md:py-28 lg:py-32"
       aria-label="About me"
     >
       <div className="container px-4 sm:px-6">
@@ -56,9 +56,11 @@ export function AboutSection() {
             About Me
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground text-lg sm:text-xl">
-            With over 5 years of experience in full-stack development, I've had
-            the privilege of working on diverse projects that have shaped my
-            expertise and passion for creating impactful digital solutions.
+            I am an aspiring software engineer with a strong foundation in
+            mathematics and statistics, driven by curiosity and a passion for
+            solving challenging problems. My expertise spans full-stack
+            development, data analysis, and machine learning, with a focus on
+            building impactful, scalable solutions.
           </p>
         </div>
 
@@ -67,21 +69,21 @@ export function AboutSection() {
           <div className="mt-16 grid gap-8 md:grid-cols-2">
             <div className="prose prose-gray dark:prose-invert max-w-none text-sm sm:text-base">
               <p className="leading-relaxed">
-                My journey in tech began with a childhood fascination with
-                computers and video games, which eventually led me to pursue a
-                degree in Computer Science. Since then, I've worked with
-                startups and enterprise companies, helping them build scalable
-                solutions and mentor the next generation of developers.
+                My journey into tech started with a deep interest in mathematics
+                and problem-solving, which led me to pursue a degree in
+                Mathematical Science, majoring in Mathematics and Statistics.
+                This academic foundation has shaped my analytical approach to
+                building efficient and scalable solutions.
               </p>
             </div>
             <div className="prose prose-gray dark:prose-invert max-w-none text-sm sm:text-base">
               <p className="leading-relaxed">
-                Outside of coding, I'm an avid rock climber, amateur
-                photographer, and continuous learner. I believe in the power of
-                technology to solve real-world problems and create positive
-                change. This drives my approach to every project: combining
-                technical excellence with practical solutions that make a
-                difference.
+                When I’m not writing code, I enjoy designing intuitive user
+                interfaces, exploring new technologies, and contributing to
+                meaningful community initiatives. I believe in leveraging
+                technology to create solutions that address real-world
+                challenges, focusing on impact and innovation in every project I
+                tackle.
               </p>
             </div>
           </div>

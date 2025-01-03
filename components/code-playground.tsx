@@ -48,13 +48,15 @@ export function CodePlayground() {
         <textarea
           value={code}
           onChange={(e) => setCode(e.target.value)}
-          className="min-h-[300px] w-full rounded-md border bg-muted p-4 font-mono text-sm"
+          className="min-h-[200px] sm:min-h-[300px] w-full rounded-md border bg-muted p-4 font-mono text-sm"
           spellCheck={false}
         />
-        <Button onClick={runCode}>Run Code</Button>
+        <Button onClick={runCode} className="w-full sm:w-auto">
+          Run Code
+        </Button>
       </div>
       {output && (
-        <pre className="rounded-md bg-muted p-4 font-mono text-sm">
+        <pre className="rounded-md bg-muted p-4 font-mono text-xs sm:text-sm overflow-x-auto whitespace-pre-wrap break-words">
           {output}
         </pre>
       )}

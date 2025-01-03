@@ -18,7 +18,10 @@ const names = ["Alice", "Bob", "Charlie", "David"];
 
 export function RealtimeCollab() {
   const [cursors, setCursors] = useState<Cursor[]>([]);
-  const [localCursor, setLocalCursor] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [localCursor, setLocalCursor] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -50,24 +53,50 @@ export function RealtimeCollab() {
     if (!containerRef.current) return;
 
     const rect = containerRef.current.getBoundingClientRect();
-    const x = Math.max(0, Math.min(95, ((e.clientX - rect.left) / rect.width) * 100)); // Constrain to bounds
-    const y = Math.max(0, Math.min(95, ((e.clientY - rect.top) / rect.height) * 100));
+    const x = Math.max(
+      0,
+      Math.min(95, ((e.clientX - rect.left) / rect.width) * 100)
+    ); // Constrain to bounds
+    const y = Math.max(
+      0,
+      Math.min(95, ((e.clientY - rect.top) / rect.height) * 100)
+    );
+
+    setLocalCursor({ x, y });
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!containerRef.current) return;
+
+    const touch = e.touches[0];
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = Math.max(
+      0,
+      Math.min(95, ((touch.clientX - rect.left) / rect.width) * 100)
+    );
+    const y = Math.max(
+      0,
+      Math.min(95, ((touch.clientY - rect.top) / rect.height) * 100)
+    );
 
     setLocalCursor({ x, y });
   };
 
   return (
     <Card className="overflow-hidden">
-      <CardContent className="p-6">
-        <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-lg font-semibold">Real-time Collaboration Demo</h3>
+      <CardContent className="p-4 sm:p-6">
+        <div className="mb-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <h3 className="text-lg font-semibold">
+            Real-time Collaboration Demo
+          </h3>
           <Badge variant="secondary">4 users online</Badge>
         </div>
 
         <div
           ref={containerRef}
-          className="relative h-[200px] sm:h-[300px] rounded-lg border bg-muted/50"
+          className="relative h-[200px] sm:h-[300px] rounded-lg border bg-muted/50 touch-none"
           onMouseMove={handleMouseMove}
+          onTouchMove={handleTouchMove}
         >
           <AnimatePresence>
             {cursors.map((cursor) => (
@@ -112,8 +141,12 @@ export function RealtimeCollab() {
             </motion.div>
           </AnimatePresence>
 
-          <div className="absolute inset-0 flex items-center justify-center text-center text-sm text-muted-foreground">
-            Move your cursor around to see real-time collaboration in action
+          <div className="absolute inset-0 flex items-center justify-center text-center text-sm text-muted-foreground p-4">
+            <p className="max-w-[250px]">
+              {window.matchMedia("(pointer: coarse)").matches
+                ? "Touch and drag to see real-time collaboration in action"
+                : "Move your cursor around to see real-time collaboration in action"}
+            </p>
           </div>
         </div>
       </CardContent>
