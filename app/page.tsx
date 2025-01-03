@@ -11,7 +11,7 @@ import { MobileNav } from "@/components/mobile-nav";
 // import { NewsletterForm } from "@/components/newsletter-form"
 // import { OpenSource } from "@/components/open-source"
 // import { Publications } from "@/components/publications"
-import { RealtimeCollab } from "@/components/realtime-collab";
+// import { RealtimeCollab } from "@/components/realtime-collab";
 import { SkillCard } from "@/components/skill-card";
 import { WorkProcess } from "@/components/work-process";
 // import { SpeakingEngagements } from "@/components/speaking-engagements"
@@ -322,12 +322,12 @@ export default function Page() {
             </div>
 
             {/* Real-time Collaboration */}
-            <div className="w-full">
+            {/* <div className="w-full">
               <h3 className="mb-4 text-xl font-semibold">
                 Real-time Collaboration
               </h3>
               <RealtimeCollab />
-            </div>
+            </div> */}
 
             {/* API & Code Playgrounds */}
             <div className="grid gap-8 md:grid-cols-2">
