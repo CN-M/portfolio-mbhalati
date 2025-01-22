@@ -56,11 +56,11 @@ export function AboutSection() {
             About Me
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground text-lg sm:text-xl">
-            I am an aspiring software engineer with a strong foundation in
-            mathematics and statistics, driven by curiosity and a passion for
-            solving challenging problems. My expertise spans full-stack
-            development, data analysis, and machine learning, with a focus on
-            building impactful, scalable solutions.
+            I am a software engineer with a strong foundation in mathematics and
+            statistics, driven by curiosity and a passion for solving
+            challenging problems. My expertise spans full-stack development,
+            data analysis, and machine learning, with a focus on building
+            impactful, scalable solutions.
           </p>
         </div>
 
