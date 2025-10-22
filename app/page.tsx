@@ -41,6 +41,30 @@ import { Quote } from "lucide-react";
 
 const projects = [
 	{
+		title: "Flagship – Feature Flag SDK",
+		description:
+			"An in-progress feature flag platform for multi-tenant apps with real-time updates, secure API keys, and a React client SDK.",
+		image: "/flagship.bmp",
+		tags: [
+			"TypeScript",
+			"Node.js",
+			"Express",
+			"React",
+			"DrizzleORM",
+			"PostgreSQL",
+			"Turborepo",
+		],
+		link: "https://flagship.mbhalati.com/", // change if you want
+	},
+	{
+		title: "Springbok – State Management Library",
+		description:
+			"Lightweight in-progress state management library inspired by Zustand, featuring subscription-based updates and React integration.",
+		image: "/springbok.bmp",
+		tags: ["JavaScript", "React", "State Management", "Library"],
+		link: "https://springbok.mbhalati.com/", // change if needed
+	},
+	{
 		title: "Bird App",
 		description:
 			"A full-stack social media platform enabling users to post, comment, like, and manage dynamic feeds.",
@@ -64,21 +88,6 @@ const projects = [
 		tags: ["Next.js", "TypeScript", "React", "TailwindCSS", "Yoco"],
 		link: "https://crcplk.co.za/",
 	},
-	// {
-	//   title: "Student Management Dashboard",
-	//   description:
-	//     "A dashboard for managing international student university applications, with dynamic user management.",
-	//   image: "/placeholder.svg",
-	//   tags: [
-	//     "Next.js",
-	//     "TypeScript",
-	//     "PostgreSQL",
-	//     "Prisma",
-	//     "ShadCN UI",
-	//     "Tanstack React Table",
-	//   ],
-	//   link: "#",
-	// },
 	{
 		title: "Personal Website",
 		description:
@@ -348,10 +357,10 @@ export default function Page() {
 						</div>
 
 						{/* Code Examples */}
-						<div className="hidden sm:block w-full max-w-4xl mx-auto">
+						{/* <div className="hidden sm:block w-full max-w-4xl mx-auto">
 							<h3 className="mb-4 text-xl font-semibold">Code Examples</h3>
 							<CodeExamples />
-						</div>
+						</div> */}
 					</div>
 				</section>
 
