@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
 import { BookOpen, Code2, Trophy, Users } from "lucide-react";
 
 const achievements = [
@@ -93,13 +92,6 @@ export function AboutSection() {
             <h3 className="text-2xl font-bold sm:text-3xl">Key Achievements</h3>
             <div className="grid gap-6 sm:grid-cols-2">
               {achievements.map((achievement) => (
-                <motion.div
-                  key={achievement.title}
-                  // initial={{ opacity: 0, y: 20 }}
-                  // whileInView={{ opacity: 1, y: 0 }}
-                  // viewport={{ once: true }}
-                  // transition={{ duration: 0.5 }}
-                >
                   <Card className="h-full">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-4">
@@ -120,7 +112,6 @@ export function AboutSection() {
                       </ul>
                     </CardContent>
                   </Card>
-                </motion.div>
               ))}
             </div>
           </div>
