@@ -44,7 +44,6 @@ const achievements = [
 
 export function AboutSection() {
 	return (
-		// biome-ignore lint/correctness/useUniqueElementIds: <I just can't be bothered>
 		<section
 			id="about"
 			className="flex flex-col items-center justify-center space-y-16 py-16 sm:py-20 md:py-28 lg:py-32"
@@ -92,8 +91,8 @@ export function AboutSection() {
 					<div className="space-y-8">
 						<h3 className="text-2xl font-bold sm:text-3xl">Key Achievements</h3>
 						<div className="grid gap-6 sm:grid-cols-2">
-							{achievements.map((achievement) => (
-								<Card className="h-full">
+							{achievements.map((achievement, { idx }) => (
+								<Card key={idx} className="h-full">
 									<CardContent className="p-6">
 										<div className="flex items-center gap-4">
 											<div className="flex size-12 items-center justify-center rounded-full bg-primary/10">
