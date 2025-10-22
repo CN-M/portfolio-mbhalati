@@ -91,7 +91,7 @@ export function AboutSection() {
 					<div className="space-y-8">
 						<h3 className="text-2xl font-bold sm:text-3xl">Key Achievements</h3>
 						<div className="grid gap-6 sm:grid-cols-2">
-							{achievements.map((achievement, { idx }) => (
+							{achievements.map((achievement, idx) => (
 								<Card key={idx} className="h-full">
 									<CardContent className="p-6">
 										<div className="flex items-center gap-4">
